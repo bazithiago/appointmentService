@@ -1,11 +1,9 @@
 import { Router } from 'express';
+import appointmentsRouter from './appointments.routes';
 
 const routes = Router();
 
-routes.post('/users', (request, response) => {
-    return response.json({message: 'Hello World'})
-})
+routes.use('/appointments', appointmentsRouter);
 
-app.listen(3333, () => {
-    console.log('✅ Server started on port 3333')
-})
+export default routes;
+
